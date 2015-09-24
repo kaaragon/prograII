@@ -1,0 +1,58 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+public class CalculadoraApplet extends Applet implements ActionListener 
+{
+    TextField Dato1 = new TextField("   ");
+        TextField Dato2 = new TextField("   ");
+        Label Resultado = new Label("     ");
+        Label Espacio = new Label("                           ");
+        Button suma = new Button("Sumar");
+        Button resta = new Button("Restar");
+        Button multiplicacion = new Button("Multiplicar");
+        Button division = new Button("Division");
+        Button borrar = new Button("Borrar");
+    
+    public void init() 
+    {
+       
+        add(Dato1);
+        add(Dato2);
+        add(Resultado);
+        add(Espacio);
+        add(suma);
+        add(resta);
+        add(multiplicacion);
+        add(division);
+        add(Espacio);
+        add(borrar);
+    }    
+    public void start()
+    {         
+    }    
+    public void actionPerformed(ActionEvent e)
+    {
+        String Opcion = e.toString();
+        double valor1 = Double.parseDouble(Dato1.getText());
+        double valor2 = Double.parseDouble(Dato2.getText());
+        double resultado;
+        
+        switch(Opcion)
+        {
+            case "Sumar":
+            resultado = valor1+valor2;
+            Resultado = new Label(Double.toString(resultado));
+                break;
+            case "Restar":
+                break;
+            case "Multiplicar":
+                break;
+            case "Division":
+                break;
+            case "borrar":
+                break;
+        }
+        
+        
+    }    
+}
